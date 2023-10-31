@@ -1,5 +1,5 @@
 <?php
-include('controller/loginController.php');
+include('controller/connection.php');
 
 if (isset($_POST['username']) || isset($_POST['password'])) {
 	if(strlen($_POST['username']) == 0) {
