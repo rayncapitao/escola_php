@@ -6,7 +6,7 @@ USE escola_php;
 CREATE TABLE IF NOT EXISTS user (
     ID_user INT(4) AUTO_INCREMENT NOT NULL PRIMARY KEY,
     username VARCHAR(40) NOT NULL,
-    password VARCHAR(40) NOT NULL
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS aluno (
@@ -58,10 +58,9 @@ CREATE TABLE IF NOT EXISTS matricula (
 -- Users
 INSERT INTO user (ID_user, username, password)
 VALUES 
-(1, "admin", "123");
+(1, "admin", "202cb962ac59075b964b07152d234b70");
 
 -- Alunos 
--- Adicionar mais alunos
 INSERT INTO aluno (nome, data_nascimento, telefone_responsavel)
 VALUES
 ('Eduardo Cardoso', '2009-02-23', '11 93423-4139'),
@@ -126,4 +125,8 @@ VALUES
 -- Matricula
 INSERT INTO matricula (ID_turma, ID_aluno)
 VALUES 
-(1, 1);
+(1, 1), (1, 2), (1, 3), (1, 4), (1, 5),
+(2, 6), (2, 7), (2, 8), (2, 9), (2, 10),
+(3, 11), (3, 12), (3, 13), (3, 14), (3, 15),
+(4, 16), (4, 17), (4, 18), (4, 19), (4, 20),
+(5, 21), (5, 22), (5, 23), (5, 24), (5, 25);
