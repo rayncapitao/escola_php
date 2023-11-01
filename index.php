@@ -10,6 +10,7 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
 		/* Prevenção de SQL Injection */
 		$username = $mysqli -> real_escape_string($_POST['username']);
 		$password = $mysqli -> real_escape_string($_POST['password']);
+		$password = md5($password); // 123
 
 		/* Autenticação */
 		$sql_code = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
@@ -25,6 +26,8 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
 				session_start();
 			}
 
+			$mysqli -> close();
+
 			$_SESSION['user'] = $user['ID_user'];
 			header("Location: ./home.php");
 		} else {
@@ -39,26 +42,31 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="./css/login.css">
+		<style>
+			<?php include('css/login.css'); ?>
+		</style>
 		<title>Login</title>
 	</head>
 	<body>
 		<nav>
-			<div>
+			<div class="center">
 				<h1 class="logoName">Raízes do Conhecimento</h1>
 			</div>
 		</nav>
-		<h2>Login</h2>
-		<form action="" method="POST">
-			<div>
-				<label for="username">Usuário:</label>
-				<input type="text" id="username" name="username" /><br />
-			</div>
-			<div>
-				<label for="password">Senha:</label>
-				<input type="password" id="password" name="password" /><br />
-			</div>
-			<button type="submit">Entrar</button>
-		</form>
+		<div class="container">
+			<h2>Login</h2>
+			<form action="" method="POST">
+				<div>
+					<label for="username">Usuário:</label> <br>
+					<input type="text" id="username" name="username" /><br />
+				</div>
+				<div class="space">
+					<label for="password">Senha:</label> <br>
+					<input type="password" id="password" name="password" /><br />
+				</div>
+				<button type="submit">Entrar</button>
+			</form>
+		</div>
 	</body>
 </html>
