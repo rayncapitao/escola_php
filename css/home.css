@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f2f2f2;
+	font-family: 'Rubik', sans-serif;
+}
+
+nav {
+	background-color: #199ebb;
+	height: 100px;
+	width: 100%;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.logoName {
+	font-size: 3rem;
+	line-height: 50px;
+	color: #fbfbfb;
+	margin: 25px;
+}
+
+.container {
+	background-color: #fbfbfb;
+	width: 580px;
+	height: 580px;
+	margin: 0 auto;
+	margin-top: 80px;
+	border-radius: 1.25rem;
+	border: solid 3px #199ebb;
+}
+
+.title {
+	margin-top: 2rem;
+	margin-left: 2rem;
+	margin-bottom: 1rem;
+}
+
+.title-text {
+	font-size: 3rem;
+	font-weight: 600;
+	color: #222;
+}
+
+table {
+	margin: 2rem;
+	width: 90%;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	padding: 0.25rem;
+	text-align: center;
+}
+
+.divDisciplina {
+	margin-top: 0.5rem;
+}
+
+label {
+	font-size: 2rem;
+	font-weight: 600;
+	color: #199ebb;
+	margin: 0 2rem;
+	margin-left: 2rem;
+}
+
+select {
+	padding: 0.5rem;
+	font-size: 1.5rem;
+}
+
+input {
+	font-size: 1.5rem;
+	font-weight: 600;
+	background-color: #30b4d1;
+	color: #f2f2f2;
+	width: 89%;
+	margin: 0 2rem;
+	margin-top: 2rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: solid 2px #088eab;
+	cursor: pointer;
+}
+
+.exit {
+	background-color: #e86074;
+	width: 40%;
+	margin: 0 2rem;
+	margin-top: 11rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: solid 2px #c22f45;
+	text-align: center;
+	font-size: 1.5rem;
+	text-decoration: none;
+	font-weight: 600;
+	color: #f2f2f2;
+}
+
+a {
+	text-decoration: none;
+}
