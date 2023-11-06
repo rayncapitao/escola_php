@@ -8,13 +8,13 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
 		echo "Preencha sua senha";
 	} else {
 		/* Prevenção de SQL Injection */
-		$username = $mysqli -> real_escape_string($_POST['username']);
-		$password = $mysqli -> real_escape_string($_POST['password']);
+		$username = $conn -> real_escape_string($_POST['username']);
+		$password = $conn -> real_escape_string($_POST['password']);
 		$password = md5($password); // 123
 
 		/* Autenticação */
 		$sql_code = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
-		$sql_query = $mysqli -> query($sql_code) or die("Falha na execução do código SQL: " . $mysqli -> error);
+		$sql_query = $conn -> query($sql_code) or die("Falha na execução do código SQL: " . $conn -> error);
 
 		$amount = $sql_query -> num_rows;
 
@@ -26,7 +26,7 @@ if (isset($_POST['username']) || isset($_POST['password'])) {
 				session_start();
 			}
 
-			$mysqli -> close();
+			$conn -> close();
 
 			$_SESSION['user'] = $user['ID_user'];
 			header("Location: ./home.php");

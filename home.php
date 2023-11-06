@@ -31,8 +31,8 @@ include('controller/connection.php');
 			<form method="post" action="./controller/processar_filtro.php">
 				<div class="divTurma">
 					<label for="turma">Turma:</label>
-					<select id="turma" name="turma" onchange="atualizarTabela()">
-						<option value="todas">Todas</option>
+					<select id="turma" name="turma">
+						<option value="todas">---</option>
 						<!-- Pega os nomes das turmas dinamicamente no bd -->
 						<?php
 							$conn = new mysqli("$SERVIDOR", "$USUARIO", "$SENHA", "$BASE");
@@ -58,8 +58,8 @@ include('controller/connection.php');
 				
 				<div class="divDisciplina">
 					<label for="disciplina">Disciplina:</label>
-					<select id="disciplina" name="disciplina" onchange="atualizarTabela()">
-						<option value="todas">Todas</option>
+					<select id="disciplina" name="disciplina">
+						<option value="todas">---</option>
 						<!-- Pega os nomes das disciplina dinamicamente no bd -->
 						<?php
 							$conn = new mysqli("$SERVIDOR", "$USUARIO", "$SENHA", "$BASE");
